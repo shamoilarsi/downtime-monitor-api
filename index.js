@@ -29,7 +29,7 @@ app.use(
 app.use(express.json());
 
 cron.schedule("*/5 * * * *", () => {
-  console.log(new Date().toLocaleString());
+  console.log(`cron job ran at ${new Date().toLocaleString()}`);
   URL_SCHEMA.find({}, async (err, urls) => {
     if (err) {
       console.error("Error while reading URLs in cron-job");
@@ -43,7 +43,6 @@ cron.schedule("*/5 * * * *", () => {
       const diff =
         currDateTime - Math.floor(statuses[0].timestamp / (60 * 1000));
       const URLObj = new URL(url);
-      console.log(diff);
 
       if (diff >= intervalToPingAfter) {
         const { alive, time } = await ping.promise.probe(URLObj.hostname, {});
@@ -108,7 +107,6 @@ app.post("/add", async (req, res) => {
 
 app.post("/update-interval", async (req, res) => {
   const { id, interval } = req.body;
-  console.log(req.body);
   const data = await URL_SCHEMA.findByIdAndUpdate(id, {
     updateInterval: interval,
   });
