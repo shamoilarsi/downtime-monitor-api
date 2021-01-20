@@ -4,6 +4,9 @@
   "main": "index.js",
   "author": "Shamoil Arsiwala",
   "license": "MIT",
+  "scripts": {
+    "start": "node index.js"
+  },
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
