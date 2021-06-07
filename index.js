@@ -107,6 +107,8 @@ app.post("/add", async (req, res) => {
 
 app.post("/update-interval", async (req, res) => {
   const { id, interval } = req.body;
+  if (interval < 5) res.sendStatus(400);
+
   const data = await URL_SCHEMA.findByIdAndUpdate(id, {
     updateInterval: interval,
   });
