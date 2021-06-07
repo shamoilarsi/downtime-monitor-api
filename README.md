@@ -1,6 +1,8 @@
 # downtime-monitor-api
 
-Deployed at - [https://downtime-monitoring-system.herokuapp.com/](https://downtime-monitoring-system.herokuapp.com/)
+FrontEnd at - [https://downtime-monitor.web.app/](https://downtime-monitor.web.app/)
+
+Client GitHub repo - [https://github.com/shamoilarsi/downtime-monitor](https://github.com/shamoilarsi/downtime-monitor)
 
 ## Available Scripts
 
